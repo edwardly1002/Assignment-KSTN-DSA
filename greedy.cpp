@@ -6,7 +6,7 @@ using namespace std;
 vector<int> adj[100];
 int n;
 
-void greedy_coloring(vector<int> &result) {
+void greedy_coloring(const vector<int>* adj, int n, vector<int> &result) {
     result.clear();
     for (int i = 0; i < n; ++i) result.push_back(0);
 
@@ -55,7 +55,7 @@ int main() {
     }
 
     vector<int> result;
-    greedy_coloring(result);
+    greedy_coloring(adj, n, result);
 
     for (int i : result) cout << i << " ";
     cout << endl;
